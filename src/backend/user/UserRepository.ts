@@ -22,4 +22,10 @@ export default class UserRepository {
       create: user,
     });
   }
+
+  static async delete(id: string): Promise<void> {
+    await this.db.user.delete({
+      where: { id },
+    });
+  }
 }
